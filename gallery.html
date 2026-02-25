@@ -4,71 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./Styles/style.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <title>Traveltime</title>
+
+    <title>Gallery | TravelTime</title>
   </head>
 
-  <body>
+  <body class="font-[poppins]">
+    <!-- HEADER -->
     <header
-      class="relative bg-[url('./Pictures/Pages-bg-img.webp')] bg-cover bg-center min-h-[100px] bg-black/20"
+      class="relative bg-[url('./Pictures/about-1.webp')] bg-cover bg-center min-h-[420px]"
     >
-      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="absolute inset-0 bg-black/70"></div>
+
+      <!-- NAVBAR -->
       <div
         class="relative z-20 max-w-7xl mx-auto flex justify-between items-center py-6 px-6 text-white"
       >
         <h1 class="text-2xl font-bold font-[raleway]">TravelTime</h1>
-        <nav class="hidden md:hidden lg:hidden xl:block font-[poppins]">
+
+        <nav class="hidden xl:block font-[poppins]">
           <ul class="flex gap-8 text-sm font-medium">
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Destinations</a></li>
             <li><a href="#">Tours</a></li>
-            <li><a class="text-[#f95e4d]" href="gallery.html">Gallery</a></li>
-            <li><a href="blog.html">blog</a></li>
+            <li>
+              <a class="text-[#f95e4d]" href="gallery.html">Gallery</a>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="#">More Pages</a></li>
             <li><a href="#">Dropdown</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
+
         <a
           href="#"
           class="bg-[#f95e4d] px-5 py-2 rounded-md text-sm font-semibold hover:bg-[#ff6b5c] transition"
         >
           Get Started
         </a>
-        <!-- <div><i class="fa-solid fa-bars block xl:hidden"></i></div> -->
       </div>
 
+      <!-- HERO TEXT -->
       <div class="relative z-10 max-w-7xl mx-auto px-6 pt-20 text-white">
         <div class="mx-auto max-w-3xl text-center">
           <h1 class="text-2xl lg:text-4xl font-bold font-[raleway] mb-4">
             Gallery
           </h1>
-          <p class="text-xs md:text-sm mb-6 whitespace-nowrap">
-            Esse dolorum voluptatum ullam est sint nemo et est ipsa porro
-            placeat quibusdam quia assumenda numquam molestias.
+
+          <p
+            class="mx-auto text-xs md:text-sm mb-6 whitespace-nowrap overflow-hidden text-ellipsis text-gray-200"
+          >
+            Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat
+            quibusdam quia assumenda numquam molestias.
           </p>
 
-          <div class="text-sm font-[poppins] text-gray-200 pb-[60px]">
+          <div class="text-sm text-gray-200 pb-[60px]">
             <a
               href="index.html"
               class="text-[#f95e4d] hover:text-[#e24c3f] transition-colors"
@@ -82,10 +86,323 @@
       </div>
     </header>
 
-    <main class="py-24 bg-white">
-      <div class="max-w-7xl mx-auto px-6"></div>
+    <!-- MAIN -->
+    <main class="py-24 bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- PURE TAILWIND/CSS CAROUSEL (NO JS)
+             - 8 radios control active slide
+             - Dots are labels
+             - Desktop shows 3 cards (prev, current, next)
+             - Mobile shows only current card -->
+        <section class="group relative py-6">
+          <!-- RADIO STATE (8) -->
+          <input class="peer/s1 hidden" type="radio" name="gallery" id="s1" checked />
+          <input class="peer/s2 hidden" type="radio" name="gallery" id="s2" />
+          <input class="peer/s3 hidden" type="radio" name="gallery" id="s3" />
+          <input class="peer/s4 hidden" type="radio" name="gallery" id="s4" />
+          <input class="peer/s5 hidden" type="radio" name="gallery" id="s5" />
+          <input class="peer/s6 hidden" type="radio" name="gallery" id="s6" />
+          <input class="peer/s7 hidden" type="radio" name="gallery" id="s7" />
+          <input class="peer/s8 hidden" type="radio" name="gallery" id="s8" />
+
+          <!-- ARROWS (desktop only) -->
+          <div class="hidden sm:block">
+            <!-- LEFT ARROW -->
+            <div
+              class="absolute left-4 top-1/2 -translate-y-1/2 z-40
+                     opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <label
+                for="s8"
+                class="hidden peer-checked/s1:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-left text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s1"
+                class="hidden peer-checked/s2:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-left text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s2"
+                class="hidden peer-checked/s3:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-left text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s3"
+                class="hidden peer-checked/s4:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-left text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s4"
+                class="hidden peer-checked/s5:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-left text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s5"
+                class="hidden peer-checked/s6:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-left text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s6"
+                class="hidden peer-checked/s7:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-left text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s7"
+                class="hidden peer-checked/s8:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-left text-[#f95e4d]"></i>
+              </label>
+            </div>
+
+            <!-- RIGHT ARROW -->
+            <div
+              class="absolute right-4 top-1/2 -translate-y-1/2 z-40
+                     opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <label
+                for="s2"
+                class="hidden peer-checked/s1:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-right text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s3"
+                class="hidden peer-checked/s2:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-right text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s4"
+                class="hidden peer-checked/s3:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-right text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s5"
+                class="hidden peer-checked/s4:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-right text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s6"
+                class="hidden peer-checked/s5:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-right text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s7"
+                class="hidden peer-checked/s6:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-right text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s8"
+                class="hidden peer-checked/s7:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-right text-[#f95e4d]"></i>
+              </label>
+
+              <label
+                for="s1"
+                class="hidden peer-checked/s8:block w-12 h-12 rounded-full bg-white shadow-lg ring-1 ring-black/5
+                       grid place-items-center cursor-pointer"
+              >
+                <i class="fa-solid fa-chevron-right text-[#f95e4d]"></i>
+              </label>
+            </div>
+          </div>
+
+          <!-- STAGE -->
+          <div class="relative h-[320px] sm:h-[400px]">
+            <!-- Slide 1 (center when s1; left when s2; right when s8) -->
+            <div
+              class="group/card absolute inset-0 mx-auto w-[92%] sm:w-[600px] h-[260px] sm:h-[310px]
+                     rounded-2xl overflow-hidden bg-white shadow-[0_40px_100px_rgba(0,0,0,0.20)]
+                     opacity-0 scale-90 transition-all duration-300
+                     peer-checked/s1:opacity-100 peer-checked/s1:scale-100 peer-checked/s1:z-30
+                     sm:peer-checked/s2:opacity-100 sm:peer-checked/s2:scale-95 sm:peer-checked/s2:-translate-x-[280px] sm:peer-checked/s2:-rotate-[3deg] sm:peer-checked/s2:z-10
+                     sm:peer-checked/s8:opacity-100 sm:peer-checked/s8:scale-95 sm:peer-checked/s8:translate-x-[280px]  sm:peer-checked/s8:rotate-[3deg]  sm:peer-checked/s8:z-10"
+            >
+              <img src="./Pictures/gallery-1.webp" class="w-full h-full object-cover" alt="1" />
+              <div class="absolute inset-0 flex items-center justify-center bg-[#f95e4d]/10 opacity-0 group-hover/card:opacity-100 transition duration-300">
+                <div class="w-14 h-14 rounded-full border-2 border-white/70 grid place-items-center">
+                  <i class="fa-solid fa-plus text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div
+              class="group/card absolute inset-0 mx-auto w-[92%] sm:w-[600px] h-[260px] sm:h-[310px]
+                     rounded-2xl overflow-hidden bg-white shadow-[0_40px_100px_rgba(0,0,0,0.20)]
+                     opacity-0 scale-90 transition-all duration-300
+                     peer-checked/s2:opacity-100 peer-checked/s2:scale-100 peer-checked/s2:z-30
+                     sm:peer-checked/s3:opacity-100 sm:peer-checked/s3:scale-95 sm:peer-checked/s3:-translate-x-[280px] sm:peer-checked/s3:-rotate-[3deg] sm:peer-checked/s3:z-10
+                     sm:peer-checked/s1:opacity-100 sm:peer-checked/s1:scale-95 sm:peer-checked/s1:translate-x-[280px]  sm:peer-checked/s1:rotate-[3deg]  sm:peer-checked/s1:z-10"
+            >
+              <img src="./Pictures/gallery-2.webp" class="w-full h-full object-cover" alt="2" />
+              <div class="absolute inset-0 flex items-center justify-center bg-[#f95e4d]/10 opacity-0 group-hover/card:opacity-100 transition duration-300">
+                <div class="w-14 h-14 rounded-full border-2 border-white/70 grid place-items-center">
+                  <i class="fa-solid fa-plus text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div
+              class="group/card absolute inset-0 mx-auto w-[92%] sm:w-[600px] h-[260px] sm:h-[310px]
+                     rounded-2xl overflow-hidden bg-white shadow-[0_40px_100px_rgba(0,0,0,0.20)]
+                     opacity-0 scale-90 transition-all duration-300
+                     peer-checked/s3:opacity-100 peer-checked/s3:scale-100 peer-checked/s3:z-30
+                     sm:peer-checked/s4:opacity-100 sm:peer-checked/s4:scale-95 sm:peer-checked/s4:-translate-x-[280px] sm:peer-checked/s4:-rotate-[3deg] sm:peer-checked/s4:z-10
+                     sm:peer-checked/s2:opacity-100 sm:peer-checked/s2:scale-95 sm:peer-checked/s2:translate-x-[280px]  sm:peer-checked/s2:rotate-[3deg]  sm:peer-checked/s2:z-10"
+            >
+              <img src="./Pictures/gallery-3.webp" class="w-full h-full object-cover" alt="3" />
+              <div class="absolute inset-0 flex items-center justify-center bg-[#f95e4d]/10 opacity-0 group-hover/card:opacity-100 transition duration-300">
+                <div class="w-14 h-14 rounded-full border-2 border-white/70 grid place-items-center">
+                  <i class="fa-solid fa-plus text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div
+              class="group/card absolute inset-0 mx-auto w-[92%] sm:w-[600px] h-[260px] sm:h-[310px]
+                     rounded-2xl overflow-hidden bg-white shadow-[0_40px_100px_rgba(0,0,0,0.20)]
+                     opacity-0 scale-90 transition-all duration-300
+                     peer-checked/s4:opacity-100 peer-checked/s4:scale-100 peer-checked/s4:z-30
+                     sm:peer-checked/s5:opacity-100 sm:peer-checked/s5:scale-95 sm:peer-checked/s5:-translate-x-[280px] sm:peer-checked/s5:-rotate-[3deg] sm:peer-checked/s5:z-10
+                     sm:peer-checked/s3:opacity-100 sm:peer-checked/s3:scale-95 sm:peer-checked/s3:translate-x-[280px]  sm:peer-checked/s3:rotate-[3deg]  sm:peer-checked/s3:z-10"
+            >
+              <img src="./Pictures/gallery-4.webp" class="w-full h-full object-cover" alt="4" />
+              <div class="absolute inset-0 flex items-center justify-center bg-[#f95e4d]/10 opacity-0 group-hover/card:opacity-100 transition duration-300">
+                <div class="w-14 h-14 rounded-full border-2 border-white/70 grid place-items-center">
+                  <i class="fa-solid fa-plus text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div
+              class="group/card absolute inset-0 mx-auto w-[92%] sm:w-[600px] h-[260px] sm:h-[310px]
+                     rounded-2xl overflow-hidden bg-white shadow-[0_40px_100px_rgba(0,0,0,0.20)]
+                     opacity-0 scale-90 transition-all duration-300
+                     peer-checked/s5:opacity-100 peer-checked/s5:scale-100 peer-checked/s5:z-30
+                     sm:peer-checked/s6:opacity-100 sm:peer-checked/s6:scale-95 sm:peer-checked/s6:-translate-x-[280px] sm:peer-checked/s6:-rotate-[3deg] sm:peer-checked/s6:z-10
+                     sm:peer-checked/s4:opacity-100 sm:peer-checked/s4:scale-95 sm:peer-checked/s4:translate-x-[280px]  sm:peer-checked/s4:rotate-[3deg]  sm:peer-checked/s4:z-10"
+            >
+              <img src="./Pictures/gallery-5.webp" class="w-full h-full object-cover" alt="5" />
+              <div class="absolute inset-0 flex items-center justify-center bg-[#f95e4d]/10 opacity-0 group-hover/card:opacity-100 transition duration-300">
+                <div class="w-14 h-14 rounded-full border-2 border-white/70 grid place-items-center">
+                  <i class="fa-solid fa-plus text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div
+              class="group/card absolute inset-0 mx-auto w-[92%] sm:w-[600px] h-[260px] sm:h-[310px]
+                     rounded-2xl overflow-hidden bg-white shadow-[0_40px_100px_rgba(0,0,0,0.20)]
+                     opacity-0 scale-90 transition-all duration-300
+                     peer-checked/s6:opacity-100 peer-checked/s6:scale-100 peer-checked/s6:z-30
+                     sm:peer-checked/s7:opacity-100 sm:peer-checked/s7:scale-95 sm:peer-checked/s7:-translate-x-[280px] sm:peer-checked/s7:-rotate-[3deg] sm:peer-checked/s7:z-10
+                     sm:peer-checked/s5:opacity-100 sm:peer-checked/s5:scale-95 sm:peer-checked/s5:translate-x-[280px]  sm:peer-checked/s5:rotate-[3deg]  sm:peer-checked/s5:z-10"
+            >
+              <img src="./Pictures/gallery-6.webp" class="w-full h-full object-cover" alt="6" />
+              <div class="absolute inset-0 flex items-center justify-center bg-[#f95e4d]/10 opacity-0 group-hover/card:opacity-100 transition duration-300">
+                <div class="w-14 h-14 rounded-full border-2 border-white/70 grid place-items-center">
+                  <i class="fa-solid fa-plus text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 7 -->
+            <div
+              class="group/card absolute inset-0 mx-auto w-[92%] sm:w-[600px] h-[260px] sm:h-[310px]
+                     rounded-2xl overflow-hidden bg-white shadow-[0_40px_100px_rgba(0,0,0,0.20)]
+                     opacity-0 scale-90 transition-all duration-300
+                     peer-checked/s7:opacity-100 peer-checked/s7:scale-100 peer-checked/s7:z-30
+                     sm:peer-checked/s8:opacity-100 sm:peer-checked/s8:scale-95 sm:peer-checked/s8:-translate-x-[280px] sm:peer-checked/s8:-rotate-[3deg] sm:peer-checked/s8:z-10
+                     sm:peer-checked/s6:opacity-100 sm:peer-checked/s6:scale-95 sm:peer-checked/s6:translate-x-[280px]  sm:peer-checked/s6:rotate-[3deg]  sm:peer-checked/s6:z-10"
+            >
+              <img src="./Pictures/gallery-7.webp" class="w-full h-full object-cover" alt="7" />
+              <div class="absolute inset-0 flex items-center justify-center bg-[#f95e4d]/10 opacity-0 group-hover/card:opacity-100 transition duration-300">
+                <div class="w-14 h-14 rounded-full border-2 border-white/70 grid place-items-center">
+                  <i class="fa-solid fa-plus text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 8 -->
+            <div
+              class="group/card absolute inset-0 mx-auto w-[92%] sm:w-[600px] h-[260px] sm:h-[310px]
+                     rounded-2xl overflow-hidden bg-white shadow-[0_40px_100px_rgba(0,0,0,0.20)]
+                     opacity-0 scale-90 transition-all duration-300
+                     peer-checked/s8:opacity-100 peer-checked/s8:scale-100 peer-checked/s8:z-30
+                     sm:peer-checked/s1:opacity-100 sm:peer-checked/s1:scale-95 sm:peer-checked/s1:-translate-x-[280px] sm:peer-checked/s1:-rotate-[3deg] sm:peer-checked/s1:z-10
+                     sm:peer-checked/s7:opacity-100 sm:peer-checked/s7:scale-95 sm:peer-checked/s7:translate-x-[280px]  sm:peer-checked/s7:rotate-[3deg]  sm:peer-checked/s7:z-10"
+            >
+              <img src="./Pictures/gallery-8.webp" class="w-full h-full object-cover" alt="8" />
+              <div class="absolute inset-0 flex items-center justify-center bg-[#f95e4d]/10 opacity-0 group-hover/card:opacity-100 transition duration-300">
+                <div class="w-14 h-14 rounded-full border-2 border-white/70 grid place-items-center">
+                  <i class="fa-solid fa-plus text-white text-2xl"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DOTS (8) -->
+          <div class="mt-10 flex justify-center gap-3">
+            <label for="s1" class="h-3 w-3 rounded-full border border-[#f95e4d] cursor-pointer peer-checked/s1:bg-[#f95e4d]"></label>
+            <label for="s2" class="h-3 w-3 rounded-full border border-[#f95e4d] cursor-pointer peer-checked/s2:bg-[#f95e4d]"></label>
+            <label for="s3" class="h-3 w-3 rounded-full border border-[#f95e4d] cursor-pointer peer-checked/s3:bg-[#f95e4d]"></label>
+            <label for="s4" class="h-3 w-3 rounded-full border border-[#f95e4d] cursor-pointer peer-checked/s4:bg-[#f95e4d]"></label>
+            <label for="s5" class="h-3 w-3 rounded-full border border-[#f95e4d] cursor-pointer peer-checked/s5:bg-[#f95e4d]"></label>
+            <label for="s6" class="h-3 w-3 rounded-full border border-[#f95e4d] cursor-pointer peer-checked/s6:bg-[#f95e4d]"></label>
+            <label for="s7" class="h-3 w-3 rounded-full border border-[#f95e4d] cursor-pointer peer-checked/s7:bg-[#f95e4d]"></label>
+            <label for="s8" class="h-3 w-3 rounded-full border border-[#f95e4d] cursor-pointer peer-checked/s8:bg-[#f95e4d]"></label>
+          </div>
+        </section>
+      </div>
     </main>
 
+    <!-- FOOTER (your full footer) -->
     <footer id="footer" class="bg-[#001a1d] text-gray-300">
       <div
         class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 lg:grid-cols-4 gap-12"
@@ -111,12 +428,11 @@
             </button>
           </form>
         </div>
+
         <div>
           <h4 class="text-white font-bold text-lg mb-6 relative inline-block">
             Company
-            <span
-              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"
-            ></span>
+            <span class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"></span>
           </h4>
           <ul class="space-y-4">
             <li>
@@ -127,11 +443,7 @@
                 <i
                   class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  About
-                </span>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">About</span>
               </a>
             </li>
             <li>
@@ -142,11 +454,7 @@
                 <i
                   class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Careers
-                </span>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">Careers</span>
               </a>
             </li>
             <li>
@@ -157,11 +465,7 @@
                 <i
                   class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Press
-                </span>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">Press</span>
               </a>
             </li>
             <li>
@@ -172,11 +476,7 @@
                 <i
                   class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Blog
-                </span>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">Blog</span>
               </a>
             </li>
             <li>
@@ -187,21 +487,16 @@
                 <i
                   class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
                 ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Contact
-                </span>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">Contact</span>
               </a>
             </li>
           </ul>
         </div>
+
         <div>
           <h4 class="text-white font-bold text-lg mb-6 relative inline-block">
             Solutions
-            <span
-              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"
-            ></span>
+            <span class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"></span>
           </h4>
           <ul class="space-y-4">
             <li>
@@ -209,14 +504,8 @@
                 href="#"
                 class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
               >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Digital Strategy
-                </span>
+                <i class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"></i>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">Digital Strategy</span>
               </a>
             </li>
             <li>
@@ -224,14 +513,8 @@
                 href="#"
                 class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
               >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Cloud Computing
-                </span>
+                <i class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"></i>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">Cloud Computing</span>
               </a>
             </li>
             <li>
@@ -239,14 +522,8 @@
                 href="#"
                 class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
               >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Data Analytics
-                </span>
+                <i class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"></i>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">Data Analytics</span>
               </a>
             </li>
             <li>
@@ -254,14 +531,8 @@
                 href="#"
                 class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
               >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  AI Solutions
-                </span>
+                <i class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"></i>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">AI Solutions</span>
               </a>
             </li>
             <li>
@@ -269,30 +540,21 @@
                 href="#"
                 class="group flex items-center gap-3 text-gray-300 transition duration-300 hover:text-[#f95e4d]"
               >
-                <i
-                  class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-                <span
-                  class="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  Cybersecurity
-                </span>
+                <i class="fa-solid fa-greater-than text-[10px] text-[#f95e4d] transition-transform duration-300 group-hover:translate-x-1"></i>
+                <span class="transition-transform duration-300 group-hover:translate-x-1">Cybersecurity</span>
               </a>
             </li>
           </ul>
         </div>
+
         <div>
           <h4 class="text-white font-bold text-lg mb-6 relative inline-block">
             Get in Touch
-            <span
-              class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"
-            ></span>
+            <span class="absolute left-0 -bottom-2 w-10 h-[2px] bg-[#f95e4d]"></span>
           </h4>
           <div class="space-y-6">
             <div class="flex items-start gap-4">
-              <div
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
-              >
+              <div class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-location-dot text-[#f95e4d]"></i>
               </div>
               <p>
@@ -301,57 +563,51 @@
                 United States
               </p>
             </div>
+
             <div class="flex items-center gap-4">
-              <div
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
-              >
+              <div class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-phone text-[#f95e4d]"></i>
               </div>
               <p>+1 (555) 987-6543</p>
             </div>
+
             <div class="flex items-center gap-4">
-              <div
-                class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center"
-              >
+              <div class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center">
                 <i class="fa-solid fa-envelope text-[#f95e4d]"></i>
               </div>
               <p>contact@example.com</p>
             </div>
+
             <div class="flex gap-4 pt-4">
               <a
                 href="#"
                 class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
+              ><i class="fa-brands fa-facebook-f"></i></a>
+
               <a
                 href="#"
                 class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
+              ><i class="fa-brands fa-x-twitter"></i></a>
+
               <a
                 href="#"
                 class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
+              ><i class="fa-brands fa-linkedin-in"></i></a>
+
               <a
                 href="#"
                 class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-youtube"></i>
-              </a>
+              ><i class="fa-brands fa-youtube"></i></a>
+
               <a
                 href="#"
                 class="w-10 h-10 bg-[#0b2a2e] rounded-full flex items-center justify-center hover:bg-[#f95e4d] hover:text-white transition duration-300"
-              >
-                <i class="fa-brands fa-github"></i>
-              </a>
+              ><i class="fa-brands fa-github"></i></a>
             </div>
           </div>
         </div>
       </div>
+
       <div class="border-t border-[#0b2a2e] bg-[#031013]">
         <div
           class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4"
@@ -362,28 +618,21 @@
           </p>
 
           <div class="text-sm flex flex-wrap gap-6 items-center">
-            <a href="#" class="hover:text-[#f95e4d] transition"
-              >Privacy Policy</a
-            >
-            <a href="#" class="hover:text-[#f95e4d] transition"
-              >Terms of Service</a
-            >
-            <a href="#" class="hover:text-[#f95e4d] transition"
-              >Cookie Policy</a
-            >
-            <span
-              >Designed by
-              <a href="#" class="text-[#f95e4d]">BootstrapMade</a></span
-            >
+            <a href="#" class="hover:text-[#f95e4d] transition">Privacy Policy</a>
+            <a href="#" class="hover:text-[#f95e4d] transition">Terms of Service</a>
+            <a href="#" class="hover:text-[#f95e4d] transition">Cookie Policy</a>
+            <span>Designed by <a href="#" class="text-[#f95e4d]">BootstrapMade</a></span>
           </div>
         </div>
       </div>
     </footer>
+
     <a
       href="#"
       id="scroll-top"
       class="w-10 h-10 text-white fixed bottom-10 right-10 bg-[#f95e4d] rounded-[100%]"
-      ><i class="fa-solid fa-arrow-up mx-[9px] my-3"></i
-    ></a>
+    >
+      <i class="fa-solid fa-arrow-up mx-[9px] my-3"></i>
+    </a>
   </body>
 </html>
